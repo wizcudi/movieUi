@@ -1,5 +1,7 @@
 
 const main = document.getElementById('main');
+const nav = document.querySelector('.nav')
+window.addEventListener('scroll', fixNav)
 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=087cd552d68599d4278c37164ff40da3&page=1'
 
@@ -68,8 +70,14 @@ form.addEventListener('submit',(e)=>{
 
 
 
-
-
+// Navbar functionality
+function fixNav() {
+    if(window.scrollY > nav.offsetHeight + 150) {
+        nav.classList.add('active')
+    } else {
+        nav.classList.remove('active')
+    }
+}
 
 
 
